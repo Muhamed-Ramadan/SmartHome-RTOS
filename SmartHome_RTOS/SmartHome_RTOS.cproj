@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8.C</ToolchainName>
+    <ProjectGuid>dce6c7e3-ee26-4d79-826b-08594b9ad897</ProjectGuid>
+    <avrdevice>ATmega128</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>SmartHome_RTOS</AssemblyName>
+    <Name>SmartHome_RTOS</Name>
+    <RootNamespace>SmartHome_RTOS</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress />
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue />
+    <BootSegment>2</BootSegment>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <AsfFrameworkConfig>
+      <framework-data>
+  <options />
+  <configurations />
+  <files />
+  <documentation help="" />
+  <offline-documentation help="" />
+  <dependencies>
+    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.42.0" />
+  </dependencies>
+</framework-data>
+    </AsfFrameworkConfig>
+    <ResetRule>0</ResetRule>
+    <EraseKey />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.Device>-mmcu=atmega128 -B "%24(PackRepoDir)\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega128"</avrgcc.common.Device>
+        <avrgcc.common.optimization.RelaxBranches>True</avrgcc.common.optimization.RelaxBranches>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>NDEBUG</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.1.130\include</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+        <avrgcc.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.1.130\include</Value>
+          </ListValues>
+        </avrgcc.assembler.general.IncludePaths>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.Device>-mmcu=atmega128 -B "%24(PackRepoDir)\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega128"</avrgcc.common.Device>
+        <avrgcc.common.optimization.RelaxBranches>True</avrgcc.common.optimization.RelaxBranches>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>DEBUG</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.1.130\include</Value>
+            <Value>../HAL/inc</Value>
+            <Value>../MCAL/inc</Value>
+            <Value>../RTOS/inc</Value>
+            <Value>../Services/MQTT</Value>
+            <Value>../Utility</Value>
+            <Value>../Smart Home/inc</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+        <avrgcc.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.1.130\include</Value>
+          </ListValues>
+        </avrgcc.assembler.general.IncludePaths>
+        <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="APP\main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\inc\DHT.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\inc\KEYPAD.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\inc\LCD.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\src\DHT.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\src\KEYPAD.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\src\LCD.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\inc\ADC.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\inc\DIO.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\inc\registers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\inc\uart128.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\src\ADC.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\src\DIO.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\src\UART128.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\AltBlckQ.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\AltBlock.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\AltPollQ.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\AltQTest.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\BlockQ.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\blocktim.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\comtest.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\comtest2.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\comtest_strings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\countsem.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\crflash.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\crhook.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\croutine.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\death.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\dynamic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\EventGroupsDemo.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\event_groups.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\fileIO.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\flash.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\flash_timer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\flop.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\FreeRTOS.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\FreeRTOSConfig.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\GenQTest.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\integer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\IntQueue.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\list.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\mevents.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\mpu_wrappers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\partest.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\PollQ.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\portable.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\portmacro.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\print.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\projdefs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\QPeek.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\queue.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\QueueOverwrite.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\QueueSet.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\recmutex.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\semphr.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\semtest.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\serial.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\StackMacros.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\task.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\TimerDemo.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\inc\timers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\src\croutine.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\src\event_groups.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\src\heap_1.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\src\integer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\src\list.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\src\PollQ.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\src\port.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\src\queue.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTOS\src\tasks.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Services\MQTT\MQTT.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Services\MQTT\MQTT.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Smart Home\inc\Proj_Cof.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Smart Home\inc\SmartHome.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Smart Home\src\SmartHome.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Utility\bitMath.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Utility\dataTypes.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="HAL\inc" />
+    <Folder Include="HAL\src" />
+    <Folder Include="MCAL" />
+    <Folder Include="APP" />
+    <Folder Include="MCAL\inc" />
+    <Folder Include="MCAL\src" />
+    <Folder Include="HAL" />
+    <Folder Include="Smart Home" />
+    <Folder Include="RTOS\inc" />
+    <Folder Include="RTOS\src" />
+    <Folder Include="Services" />
+    <Folder Include="Services\MQTT" />
+    <Folder Include="Smart Home\inc" />
+    <Folder Include="Smart Home\src" />
+    <Folder Include="Utility" />
+    <Folder Include="RTOS" />
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
