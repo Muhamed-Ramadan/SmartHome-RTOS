@@ -185,6 +185,9 @@ SmartHome-RTOS/
 │       ├── bitMath.h
 │       └── dataTypes.h
 ├── SIM_v3/                       # Proteus Simulation (latest)
+│   ├── IOT_SmartHome_RTOS.pdsprj # Proteus project file
+│   ├── SmartHome_RTOS.hex        # Compiled HEX for direct simulation
+│   └── simulation_preview.png    # Simulation screenshot
 ├── Documents/
 │   ├── charts/
 │   │   └── System_Flowchart.png
@@ -205,10 +208,18 @@ SmartHome-RTOS/
 
 ## 🖥️ Simulation
 
-Proteus simulation files are included in the `/SIM_v3` folder.
+![Simulation Preview](SIM_v3/simulation_preview.png)
+
+> 🎬 Full demo GIF coming soon!
+
+Proteus simulation files and HEX file are available in `/SIM_v3/`.
 Open with **Proteus Design Suite** (version 8 or later recommended).
 
 For UART/MQTT testing, use **VSPE (Virtual Serial Port Emulator)** with the config file in `/VSPE config/`.
+
+### ⚠️ Simulation Notes
+- **Flame Sensor** → Represented by a logic toggle switch. Click during simulation to trigger fire alarm.
+- **Soil Moisture Sensor** → Represented by a variable resistor. Adjust value to simulate dry/wet soil conditions.
 
 ---
 
