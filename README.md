@@ -257,6 +257,6 @@ This project was developed during **NTI (National Telecommunication Institute)**
 
 ## 🙋‍♂️ Author
 
-**Muhamed Ramadan**
+**Mohamed Ramadan**
 Embedded Systems Engineer
 [LinkedIn](https://linkedin.com/in/muhamed-ramadan) • [GitHub](https://github.com/Muhamed-Ramadan)
