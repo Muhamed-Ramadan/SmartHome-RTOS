@@ -35,9 +35,9 @@ The diagram illustrates the physical placement of all system components across t
 - **Autonomous Fire Alarm System** — Flame sensor triggers buzzer and fire pump automatically, with real-time MQTT alert to mobile app.
 
 ### 🌿 Environmental Automation
-- **Automatic Irrigation System** — Reads soil moisture via analog sensor and activates water pump when moisture falls below a user-configurable threshold (closed-loop control).
-- **Adaptive LDR Lighting** — Reads ambient light level and automatically controls outer lights based on a user-configurable cutoff value.
-- **Temperature Control** — DHT22 sensor reads indoor temperature; fan activates automatically when temperature exceeds a user-defined threshold.
+- **Automatic Irrigation System** — Reads soil moisture via analog sensor and activates water pump when moisture falls **below** a user-configurable threshold (closed-loop control).
+- **Adaptive LDR Lighting** — Reads ambient light level and automatically turns on outer lights when LDR reading falls **below** a user-configurable cutoff value.
+- **Temperature Control** — DHT22 sensor reads indoor temperature; fan activates automatically when temperature **exceeds** a user-defined threshold.
 - **Humidity Monitoring** — Indoor humidity is monitored and published in real time via MQTT.
 
 ### 📡 IoT Remote Control
@@ -48,9 +48,9 @@ The diagram illustrates the physical placement of all system components across t
 
 ### ⚙️ User Configuration
 Users can configure 3 system thresholds at runtime via keypad:
-- 🌡️ Temperature threshold for fan activation
-- 💡 LDR cutoff value for outer lights
-- 💧 Soil moisture threshold for irrigation
+- 🌡️ Temperature threshold → fan activates when temp **exceeds** this value
+- 💡 LDR cutoff value → lights activate when LDR reading **falls below** this value
+- 💧 Soil moisture threshold → pump activates when moisture **falls below** this value
 
 ---
 
@@ -187,7 +187,14 @@ SmartHome-RTOS/
 ├── SIM_v3/                       # Proteus Simulation (latest)
 │   ├── IOT_SmartHome_RTOS.pdsprj # Proteus project file
 │   ├── SmartHome_RTOS.hex        # Compiled HEX for direct simulation
-│   └── simulation_preview.png    # Simulation screenshot
+│   ├── simulation_preview.png    # Simulation overview
+│   └── demos/                    # Feature demonstration GIFs
+│       ├── demo_security_door.gif
+│       ├── demo_irrigation.gif
+│       ├── demo_outdoor_lighting.gif
+│       ├── demo_fire_alarm.gif
+│       ├── demo_temperature_fan.gif
+│       └── demo_humidity_monitor.gif
 ├── Documents/
 │   ├── charts/
 │   │   └── System_Flowchart.png
@@ -210,8 +217,6 @@ SmartHome-RTOS/
 
 ![Simulation Preview](SIM_v3/simulation_preview.png)
 
-> 🎬 Full demo GIF coming soon!
-
 Proteus simulation files and HEX file are available in `/SIM_v3/`.
 Open with **Proteus Design Suite** (version 8 or later recommended).
 
@@ -220,6 +225,53 @@ For UART/MQTT testing, use **VSPE (Virtual Serial Port Emulator)** with the conf
 ### ⚠️ Simulation Notes
 - **Flame Sensor** → Represented by a logic toggle switch. Click during simulation to trigger fire alarm.
 - **Soil Moisture Sensor** → Represented by a variable resistor. Adjust value to simulate dry/wet soil conditions.
+- **Threshold Testing** → Thresholds can be changed at runtime via keypad to test system response without waiting for real sensor changes.
+
+---
+
+## 🎬 Feature Demos
+
+### 🔐 Security — Door Lock & Keypad
+![Security Demo](SIM_v3/demos/demo_security_door.gif)
+
+---
+
+### 💧 Irrigation System
+> Soil moisture is displayed on LCD. Water pump activates when moisture falls below the configured threshold.
+
+![Irrigation Demo](SIM_v3/demos/demo_irrigation.gif)
+
+---
+
+### 💡 Outdoor Lighting
+> Outer lights activate automatically when LDR reading falls below the configured cutoff value.
+
+![Outdoor Lighting Demo](SIM_v3/demos/demo_outdoor_lighting.gif)
+
+---
+
+### 🔥 Fire Alarm System
+> Fire pump and buzzer activate immediately upon flame detection.
+
+![Fire Alarm Demo](SIM_v3/demos/demo_fire_alarm.gif)
+
+---
+
+### ❄️ Temperature & Fan Control
+> Indoor temperature is continuously displayed on LCD. Fan activates when temperature exceeds the configured threshold.
+
+![Temperature Fan Demo](SIM_v3/demos/demo_temperature_fan.gif)
+
+---
+
+### 🌫️ Humidity Monitoring
+> Indoor humidity is continuously monitored and displayed on LCD in real time.
+
+![Humidity Monitor Demo](SIM_v3/demos/demo_humidity_monitor.gif)
+
+---
+
+> 🎬 Full system overview GIF and LCD UI navigation demo coming soon!
 
 ---
 
